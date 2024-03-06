@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
-"""Script that fetch 10 hot post for a given subreddit."""
+"""
+Script that fetch 10 hot post for a given subreddit.
+"""
 
 import requests
 
@@ -15,6 +16,7 @@ def number_of_subscribers(subreddit):
 
     if response.status_code == 200:
         data = response.json().get('data')
+        print(data)
         if data:
             return data.get('subscribers', 0)
     return 0
